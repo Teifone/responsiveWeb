@@ -1,0 +1,266 @@
+:root{
+    --color-fondo:#a9a9c5;
+    --color-header-footer:#908db8;
+    --color-cajas-internas:#d0d2e1;
+    --letra-header:'Archivo Black', sans-serif;;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    width: 100%;
+}
+
+body{   
+    display: grid;
+    grid-template-rows: 40vw auto auto;
+    grid-template-areas:
+        "header header header"
+        "contenido contenido contenido"
+        "sidebar sidebar sidebar"
+        "footer footer footer";
+    height: 100vh;
+}
+
+header{
+    background-color: var(--color-header-footer);
+    grid-area: header;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1, footer h2{
+    font-family: var(--letra-header);
+    font-size: 2.5rem;
+    padding: 2rem;
+}
+
+header img{
+    height: 10rem;
+    width: 10rem;
+    padding: 2rem;
+}
+
+main{
+    background-color: var(--color-cajas-internas);
+    grid-area: contenido;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+main h2{
+    display:block;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+
+main p{
+    display: block;
+    text-align: justify;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+}
+
+aside{
+    background-color: var(--color-cajas-internas);
+    grid-area: sidebar;
+    padding: 2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    grid-template-rows: 10% auto;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "contenido1 contenido2 contenido3";
+    gap: 1rem;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+aside h2{
+    font-weight: bold;
+    font-size: 2rem;
+    grid-area: titulo;
+    text-align: center;
+}
+
+aside img{
+    height: 10rem;
+    width: 10rem;
+}
+
+.img1{
+    grid-area: contenido1;
+}
+
+.img2{
+    grid-area: contenido2;
+}
+
+.img3{
+    grid-area: contenido3;
+}
+
+.widget{
+    display: none;
+}
+
+footer{
+    margin-top: 2rem;
+    background-color: var(--color-header-footer);
+    grid-area: footer;
+    color: white;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width:700px){
+    body{
+        display: grid;
+        background-color: var(--color-fondo);
+        grid-template-columns: repeat(auto-fit, minmax(30%,1fr));
+        grid-template-rows: 14.5vh 38vh 19vh 14vh;
+        grid-template-areas: 
+            "header header header"
+            "contenido contenido sidebar"
+            "widget1 widget2 sidebar"
+            "footer footer footer";
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    
+    header{
+        background-color: var(--color-header-footer);
+        grid-area: header;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    h1{
+        font-family: var(--letra-header);
+        font-size: 2.5rem;
+    }
+
+    header img{
+        height: 8rem;
+        width: 8rem;
+    }
+
+    main{
+        background-color: var(--color-cajas-internas);
+        grid-area: contenido;
+        padding: 2rem;
+    }
+
+    main h2{
+        display:block;
+        font-weight: bold;
+        text-align: justify;
+        font-size: 1.8rem;
+    }
+
+    main p{
+        display: block;
+        text-align: justify;
+        margin-top: 1.5rem;
+        font-size:small;
+    }
+
+    aside{
+        background-color: var(--color-cajas-internas);
+        grid-area: sidebar;
+        padding: 2rem;
+        display: grid;
+        align-items: center;
+        grid-template-rows: 10% 30% 30% 30%;
+        justify-items: center;
+        grid-template-areas:
+            "titulo titulo titulo"
+            "contenido1 contenido1 contenido1"
+            "contenido2 contenido2 contenido2"
+            "contenido3 contenido3 contenido3";
+    }
+
+    aside h2{
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    aside img{
+        height: 10rem;
+        width: 10rem;
+    }
+
+    .uno{
+        background-color: var(--color-cajas-internas);
+        grid-area: widget1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .uno h2{
+        font-weight: bold;
+        text-align: justify;
+        font-size: 1.5rem;
+        width: auto;
+    }
+
+    .uno img{
+        width: 10vw;
+    }
+
+    .dos{
+        background-color: var(--color-cajas-internas);
+        grid-area: widget2;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dos h2{
+        font-weight: bold;
+        text-align: justify;
+        font-size: 1.3rem;
+        width: 27vw;
+    }
+
+    .dos img{
+        width: 8vw;
+        height: 10vh;
+    }
+
+    footer{
+        background-color: var(--color-header-footer);
+        grid-area: footer;
+        color: white;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding: 2rem;
+        display: grid;
+        justify-items: flex-end;
+        align-items: flex-end;
+    }
+}
+
