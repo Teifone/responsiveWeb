@@ -25,6 +25,8 @@ body{
         "sidebar sidebar sidebar"
         "footer footer footer";
     height: 100vh;
+    background-color: #a9a9c5;
+    padding: 2rem;
 }
 
 header{
@@ -131,10 +133,11 @@ footer{
 @media (min-width:700px){
     body{
         display: grid;
+        
         background-color: var(--color-fondo);
         grid-template-columns: repeat(auto-fit, minmax(30%,1fr));
-        grid-template-rows: 14.5vh 38vh 19vh 14vh;
-        grid-template-areas: 
+        grid-template-rows: 14.5vh auto auto 14vh;
+        grid-template-areas:
             "header header header"
             "contenido contenido sidebar"
             "widget1 widget2 sidebar"
@@ -161,10 +164,10 @@ footer{
     }
 
     header img{
-        height: 8rem;
-        width: 8rem;
+        height: 15rem;
+        width: 15rem;
     }
-
+    
     main{
         background-color: var(--color-cajas-internas);
         grid-area: contenido;
@@ -187,17 +190,18 @@ footer{
 
     aside{
         background-color: var(--color-cajas-internas);
-        grid-area: sidebar;
-        padding: 2rem;
-        display: grid;
-        align-items: center;
-        grid-template-rows: 10% 30% 30% 30%;
-        justify-items: center;
-        grid-template-areas:
-            "titulo titulo titulo"
-            "contenido1 contenido1 contenido1"
-            "contenido2 contenido2 contenido2"
-            "contenido3 contenido3 contenido3";
+    grid-area: sidebar;
+    padding: 2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1rem auto 1rem;
+    grid-template-rows: 10% auto auto auto;
+    justify-items: center;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "contenido1 contenido1 contenido1"
+        "contenido2 contenido2 contenido2"
+        "contenido3 contenido3 contenido3";
     }
 
     aside h2{
@@ -206,8 +210,8 @@ footer{
     }
 
     aside img{
-        height: 10rem;
-        width: 10rem;
+        width: 15rem;
+        height: 80%;
     }
 
     .uno{
@@ -227,7 +231,8 @@ footer{
     }
 
     .uno img{
-        width: 10vw;
+        width: 98%;
+        margin-top: 3rem;
     }
 
     .dos{
@@ -243,12 +248,13 @@ footer{
         font-weight: bold;
         text-align: justify;
         font-size: 1.3rem;
-        width: 27vw;
+        width: auto;
     }
 
     .dos img{
-        width: 8vw;
-        height: 10vh;
+        width: 60%;
+        height: 50%;
+        margin-top: 3rem;
     }
 
     footer{
